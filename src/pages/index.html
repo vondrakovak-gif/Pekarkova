@@ -815,7 +815,7 @@ section + section{border-top:1px solid var(--line)}
       </div>
     </div>
 
-    <p class="refs__more">a&nbsp;ještě dalších <button class="refs__btn" onclick="(function(btn){document.querySelectorAll('.ref--hidden').forEach(r=>r.style.display='flex');btn.parentElement.style.display='none';})(this)">6&nbsp;referencí</button> od&nbsp;klientů, se&nbsp;kterými spolupracuji.</p>
+    <p class="refs__more">a&nbsp;ještě dalších <button class="refs__btn" onclick="(function(btn){document.querySelectorAll('.ref--hidden').forEach(r=>r.classList.remove('ref--hidden'));btn.parentElement.style.display='none';})(this)">6&nbsp;referencí</button> od&nbsp;klientů, se&nbsp;kterými spolupracuji.</p>
   </div>
 </section>
 
