@@ -336,6 +336,12 @@ section + section{border-top:1px solid var(--line)}
   font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink-2);
 }
 .refs__more a{color:var(--accent); border-bottom:1px solid var(--accent); font-weight:500}
+.ref--hidden{display:none}
+.refs__btn{
+  background:none; border:none; cursor:pointer; padding:0;
+  color:var(--accent); border-bottom:1px solid var(--accent); font-weight:500;
+  font-family:inherit; font-size:inherit;
+}
 
 /* ---------- CERTIFIKACE ---------- */
 .cert-strip{
@@ -455,7 +461,7 @@ section + section{border-top:1px solid var(--line)}
   .nav__menu{display:none}
   .hero{padding:48px 0 72px}
   .hero__grid{grid-template-columns:1fr; gap:40px}
-  .hero__photo{max-width:360px; margin:0 auto; aspect-ratio:3/4}
+  .hero__photo{width:100%; height:420px; max-width:100%; margin:0; border-radius:16px 16px 8px 8px}
   .hero__title{font-size:56px}
   .hero__lede{font-size:15px}
   .hero__cta{flex-wrap:wrap}
@@ -763,9 +769,42 @@ section + section{border-top:1px solid var(--line)}
           <span class="ref__since">od 2016</span>
         </div>
       </div>
+
+      <div class="ref ref--hidden">
+        <p class="ref__body">„Sem doplňte text reference 5."</p>
+        <div class="ref__by">
+          <div class="ref__av">AB</div>
+          <div><strong>Jméno K.</strong><span>profese</span></div>
+          <span class="ref__since">od 20XX</span>
+        </div>
+      </div>
+      <div class="ref ref--hidden">
+        <p class="ref__body">„Sem doplňte text reference 6."</p>
+        <div class="ref__by">
+          <div class="ref__av">CD</div>
+          <div><strong>Jméno K.</strong><span>profese</span></div>
+          <span class="ref__since">od 20XX</span>
+        </div>
+      </div>
+      <div class="ref ref--hidden">
+        <p class="ref__body">„Sem doplňte text reference 7."</p>
+        <div class="ref__by">
+          <div class="ref__av">EF</div>
+          <div><strong>Jméno K.</strong><span>profese</span></div>
+          <span class="ref__since">od 20XX</span>
+        </div>
+      </div>
+      <div class="ref ref--hidden">
+        <p class="ref__body">„Sem doplňte text reference 8."</p>
+        <div class="ref__by">
+          <div class="ref__av">GH</div>
+          <div><strong>Jméno K.</strong><span>profese</span></div>
+          <span class="ref__since">od 20XX</span>
+        </div>
+      </div>
     </div>
 
-    <p class="refs__more">a&nbsp;ještě dalších <a href="#">7&nbsp;referencí</a> od&nbsp;klientů, se&nbsp;kterými spolupracuji.</p>
+    <p class="refs__more">a&nbsp;ještě dalších <button class="refs__btn" onclick="(function(btn){document.querySelectorAll('.ref--hidden').forEach(r=>r.style.display='flex');btn.parentElement.style.display='none';})(this)">7&nbsp;referencí</button> od&nbsp;klientů, se&nbsp;kterými spolupracuji.</p>
   </div>
 </section>
 
