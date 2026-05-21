@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Michaela Pekárková — Editorial Dusk</title>
+<meta name="viewport" content="width=1440">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1a1814;
+  --bg-2:#221f1a;
+  --bg-3:#2a2620;
+  --ink:#e8dfd3;
+  --ink-2:#c4b8a6;
+  --ink-3:#8a7f6f;
+  --gold:#c89b6c;
+  --gold-2:#a87c4f;
+  --line:rgba(232,223,211,.12);
+  --line-2:rgba(232,223,211,.22);
+  --serif:"Cormorant Garamond", "Times New Roman", serif;
+  --sans:"Manrope", -apple-system, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.6;
+  font-weight:300;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(26,24,20,.78);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--line);
+}
+.nav__inner{
+  max-width:1320px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 56px;
+}
+.nav__brand{
+  font-family:var(--serif); font-size:22px; letter-spacing:.04em; font-weight:500;
+  display:flex; align-items:baseline; gap:10px;
+}
+.nav__brand em{font-style:italic;color:var(--gold)}
+.nav__brand .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;transform:translateY(-3px)}
+.nav__menu{display:flex; gap:32px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2)}
+.nav__menu a{position:relative; padding:6px 0; transition:color .2s}
+.nav__menu a:hover{color:var(--gold)}
+.nav__menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav__menu a:hover::after{transform:scaleX(1)}
+.nav__cta{
+  font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+  padding:11px 22px; border:1px solid var(--gold); color:var(--gold);
+  border-radius:999px; transition:all .25s;
+}
+.nav__cta:hover{background:var(--gold); color:var(--bg)}
+
+/* ---------- container ---------- */
+.wrap{max-width:1320px; margin:0 auto; padding:0 56px}
+.eyebrow{
+  font-family:var(--sans); font-size:11px; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--gold); font-weight:500;
+  display:flex; align-items:center; gap:14px;
+}
+.eyebrow::before{content:""; width:32px; height:1px; background:var(--gold); display:inline-block}
+
+/* ---------- hero ---------- */
+.hero{padding:80px 0 120px; position:relative; overflow:hidden}
+.hero__grid{display:grid; grid-template-columns:1.05fr .95fr; gap:80px; align-items:end}
+.hero__name{font-family:var(--serif); font-style:italic; color:var(--gold); font-size:18px; margin-bottom:36px; letter-spacing:.02em}
+.hero__title{
+  font-family:var(--serif); font-weight:400;
+  font-size:128px; line-height:.94; letter-spacing:-.02em;
+  margin-bottom:48px;
+}
+.hero__title em{font-style:italic; color:var(--gold); font-weight:300}
+.hero__lede{font-size:17px; line-height:1.65; color:var(--ink-2); max-width:480px; margin-bottom:40px}
+.hero__meta{display:flex; gap:48px; padding-top:32px; border-top:1px solid var(--line)}
+.hero__meta div{font-size:13px; color:var(--ink-3); letter-spacing:.04em}
+.hero__meta strong{display:block; font-family:var(--serif); font-size:34px; font-weight:400; color:var(--ink); margin-bottom:4px}
+.hero__photo{
+  position:relative;
+  aspect-ratio:4/5;
+  background:
+    linear-gradient(180deg, rgba(26,24,20,0) 50%, rgba(26,24,20,.55) 100%),
+    url("https://michaelapekarkova.cz/wp-content/uploads/2025/05/DSF_1178-kopie.jpg") center/cover, #3a3128;
+  border-radius:2px;
+}
+.hero__photo::after{
+  content:""; position:absolute; inset:14px; border:1px solid rgba(232,223,211,.16); pointer-events:none;
+}
+.hero__caption{
+  position:absolute; left:24px; bottom:24px; font-family:var(--serif); font-style:italic;
+  font-size:15px; color:var(--ink-2); letter-spacing:.02em;
+}
+.cta{
+  display:inline-flex; align-items:center; gap:14px;
+  font-family:var(--sans); font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+  padding:16px 28px; border:1px solid var(--gold); color:var(--gold);
+  border-radius:999px; transition:all .25s;
+}
+.cta:hover{background:var(--gold); color:var(--bg); gap:18px}
+.cta--filled{background:var(--gold); color:var(--bg)}
+.cta--filled:hover{background:transparent; color:var(--gold)}
+.cta__arrow{font-size:16px}
+
+/* ---------- section ---------- */
+section{padding:120px 0; border-top:1px solid var(--line); position:relative}
+.section__head{display:grid; grid-template-columns:200px 1fr; gap:80px; margin-bottom:80px; align-items:start}
+.section__num{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--gold);
+}
+.section__num strong{display:block; font-style:normal; font-size:80px; color:var(--ink); line-height:.9; font-weight:300; margin-top:8px}
+.section__title{font-family:var(--serif); font-weight:400; font-size:80px; line-height:1; letter-spacing:-.015em; margin-bottom:24px}
+.section__title em{font-style:italic; color:var(--gold)}
+.section__lede{font-size:16px; color:var(--ink-2); max-width:640px; line-height:1.6}
+
+/* ---------- O mně ---------- */
+.about__body{display:grid; grid-template-columns:.85fr 1.15fr; gap:80px; align-items:start}
+.about__photo{aspect-ratio:3/4; background:#3a3128 url("https://michaelapekarkova.cz/wp-content/uploads/2025/05/DSF_1278-kopie.jpg") center/cover; border-radius:2px; position:sticky; top:120px}
+.about__text{font-size:16px; line-height:1.8; color:var(--ink-2)}
+.about__text p{margin-bottom:22px}
+.about__text p:first-child::first-letter{
+  font-family:var(--serif); font-size:78px; float:left; line-height:.88; padding:8px 14px 0 0; color:var(--gold); font-style:italic;
+}
+.about__pull{font-family:var(--serif); font-style:italic; font-size:30px; line-height:1.3; color:var(--ink); margin:36px 0; padding-left:24px; border-left:2px solid var(--gold)}
+.about__cta{margin-top:40px}
+
+/* ---------- Jak pracuji ---------- */
+.howq{font-family:var(--serif); font-style:italic; font-size:34px; color:var(--ink); line-height:1.35; margin-bottom:64px; max-width:780px}
+.howq strong{font-style:normal; color:var(--gold); font-weight:400}
+.steps{display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--line)}
+.step{
+  padding:36px 32px 36px 0;
+  display:grid; grid-template-columns:64px 1fr; gap:24px;
+  border-bottom:1px solid var(--line);
+  transition:background .25s;
+}
+.step:nth-child(odd){padding-right:48px; border-right:1px solid var(--line)}
+.step:nth-child(even){padding-left:48px}
+.step:hover{background:rgba(200,155,108,.04)}
+.step__num{font-family:var(--serif); font-style:italic; font-size:42px; color:var(--gold); font-weight:300; line-height:1; padding-top:4px}
+.step__title{font-family:var(--serif); font-size:22px; font-weight:500; color:var(--ink); margin-bottom:10px; line-height:1.25}
+.step__desc{font-size:14px; color:var(--ink-3); line-height:1.6}
+.howcta{display:flex; justify-content:space-between; align-items:center; margin-top:72px; padding:36px 0 0; border-top:1px solid var(--line-2)}
+.howcta p{font-family:var(--serif); font-style:italic; font-size:24px; color:var(--ink); max-width:520px}
+
+/* ---------- Finance / Reality ---------- */
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line)}
+.cards--2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--bg);
+  padding:40px 36px;
+  display:flex; flex-direction:column;
+  min-height:300px;
+  transition:background .3s, transform .3s;
+  position:relative;
+  cursor:default;
+}
+.card:hover{background:var(--bg-2)}
+.card__num{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--gold); letter-spacing:.05em; margin-bottom:24px}
+.card__title{
+  font-family:var(--serif); font-size:24px; font-weight:500; line-height:1.2;
+  color:var(--ink); margin-bottom:18px; letter-spacing:-.005em;
+}
+.card__desc{font-size:14px; color:var(--ink-3); line-height:1.65; flex:1}
+.card__arrow{
+  margin-top:24px; font-size:18px; color:var(--gold);
+  opacity:.4; transition:all .25s; align-self:flex-start;
+}
+.card:hover .card__arrow{opacity:1; transform:translateX(4px)}
+
+.reality{display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start}
+.reality__lead{font-family:var(--serif); font-style:italic; font-size:26px; color:var(--ink); line-height:1.4; padding-right:24px}
+.reality__list{display:flex; flex-direction:column}
+.realityItem{
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+  display:grid; grid-template-columns:42px 1fr 20px; gap:24px;
+  align-items:start; cursor:default;
+  transition:padding .25s;
+}
+.realityItem:hover{padding-left:8px}
+.realityItem:first-child{border-top:1px solid var(--line)}
+.realityItem__n{font-family:var(--serif); font-style:italic; color:var(--gold); font-size:18px; padding-top:2px}
+.realityItem__t{font-family:var(--serif); font-size:22px; color:var(--ink); margin-bottom:8px; font-weight:500}
+.realityItem__d{font-size:13.5px; color:var(--ink-3); line-height:1.65}
+.realityItem__a{color:var(--gold); font-size:18px; padding-top:6px; opacity:.4; transition:opacity .25s}
+.realityItem:hover .realityItem__a{opacity:1}
+
+/* ---------- Reference ---------- */
+.testimonials{display:grid; grid-template-columns:repeat(2,1fr); gap:40px}
+.t{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  padding:48px 44px;
+  position:relative;
+  transition:border-color .25s, transform .25s;
+}
+.t:hover{border-color:var(--gold-2); transform:translateY(-4px)}
+.t__mark{font-family:var(--serif); font-style:italic; font-size:96px; line-height:0; color:var(--gold); position:absolute; top:48px; left:36px; opacity:.4}
+.t__body{font-family:var(--serif); font-size:19px; line-height:1.55; color:var(--ink); padding-top:36px; font-weight:300; letter-spacing:.005em}
+.t__sep{height:1px; background:var(--line-2); margin:32px 0 24px}
+.t__by{display:flex; justify-content:space-between; align-items:center}
+.t__by strong{font-family:var(--serif); font-size:17px; font-weight:500; color:var(--gold); display:block; margin-bottom:2px}
+.t__by span{font-size:12px; color:var(--ink-3); letter-spacing:.04em; text-transform:uppercase}
+.t__badge{font-family:var(--serif); font-style:italic; font-size:13px; color:var(--ink-3)}
+.t-more{text-align:center; margin-top:48px; color:var(--ink-3); font-size:13px; letter-spacing:.1em; text-transform:uppercase}
+.t-more a{color:var(--gold); border-bottom:1px solid var(--gold-2); padding-bottom:2px}
+
+/* ---------- Certifikace ---------- */
+.certs{display:grid; grid-template-columns:repeat(7,1fr); gap:1px; background:var(--line); border:1px solid var(--line)}
+.cert{
+  background:var(--bg);
+  aspect-ratio:1/1.35;
+  display:flex; flex-direction:column;
+  justify-content:space-between;
+  padding:22px 18px;
+  transition:background .25s;
+  cursor:default;
+}
+.cert:hover{background:var(--bg-2)}
+.cert__seal{
+  width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif); font-style:italic; color:var(--gold); font-size:18px;
+}
+.cert__name{font-family:var(--serif); font-size:13px; color:var(--ink-2); line-height:1.3; font-weight:500}
+.cert__year{font-size:10px; color:var(--ink-3); letter-spacing:.12em; margin-top:6px}
+
+/* ---------- Kontakt ---------- */
+.contact{padding:140px 0 100px}
+.contact__grid{display:grid; grid-template-columns:1.15fr .85fr; gap:80px}
+.contact__title{font-family:var(--serif); font-size:96px; line-height:.95; letter-spacing:-.02em; margin-bottom:40px}
+.contact__title em{font-style:italic; color:var(--gold)}
+.contact__sub{font-family:var(--serif); font-style:italic; font-size:24px; color:var(--ink-2); margin-bottom:48px; line-height:1.5; max-width:480px}
+.contact__items{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line)}
+.contact__item{
+  background:var(--bg); padding:28px 32px;
+  display:grid; grid-template-columns:120px 1fr 20px; gap:24px; align-items:center;
+  transition:background .25s; cursor:default;
+}
+.contact__item:hover{background:var(--bg-2)}
+.contact__item .lab{font-size:11px; color:var(--ink-3); letter-spacing:.18em; text-transform:uppercase}
+.contact__item .val{font-family:var(--serif); font-size:24px; color:var(--ink); font-weight:400}
+.contact__item .arr{color:var(--gold); opacity:.5}
+
+.contact__card{background:var(--bg-2); border:1px solid var(--line); padding:48px 40px}
+.contact__card h4{font-family:var(--serif); font-size:28px; font-weight:400; margin-bottom:8px}
+.contact__card h4 em{font-style:italic; color:var(--gold)}
+.contact__card p{color:var(--ink-3); font-size:14px; margin-bottom:32px; line-height:1.6}
+.form{display:flex; flex-direction:column; gap:18px}
+.form input,.form textarea{
+  background:transparent; border:none; border-bottom:1px solid var(--line-2);
+  padding:14px 0 12px; color:var(--ink); font:inherit; font-size:15px;
+  transition:border-color .2s;
+}
+.form input::placeholder, .form textarea::placeholder{color:var(--ink-3)}
+.form input:focus, .form textarea:focus{outline:none; border-bottom-color:var(--gold)}
+.form textarea{min-height:90px; resize:vertical}
+.form button{
+  margin-top:14px; align-self:flex-start;
+  font-family:var(--sans); font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+  padding:14px 26px; border:1px solid var(--gold); background:var(--gold); color:var(--bg);
+  border-radius:999px; cursor:pointer; transition:all .2s;
+}
+.form button:hover{background:transparent; color:var(--gold)}
+
+/* ---------- footer ---------- */
+.footer{padding:64px 0 36px; border-top:1px solid var(--line); color:var(--ink-3); font-size:13px}
+.footer__top{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:48px; margin-bottom:48px}
+.footer h5{font-family:var(--serif); font-size:14px; font-weight:500; color:var(--ink-2); text-transform:uppercase; letter-spacing:.16em; margin-bottom:18px}
+.footer p, .footer a{display:block; margin-bottom:6px; line-height:1.6}
+.footer__brand{font-family:var(--serif); font-size:32px; color:var(--ink); margin-bottom:14px; font-weight:400}
+.footer__brand em{font-style:italic; color:var(--gold)}
+.footer__bot{padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; font-size:12px}
+
+/* ---------- focus mode niceties ---------- */
+[data-screen-label]{scroll-margin-top:80px}
+</style>
+</head>
+<body data-screen-label="Pekárková · Dusk">
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#uvod" class="nav__brand">
+      <span>Pekárková</span><span class="dot"></span><em>finance &amp; reality</em>
+    </a>
+    <nav class="nav__menu">
+      <a href="#omne">O mně</a>
+      <a href="#jakpracuji">Jak pracuji</a>
+      <a href="#finance">Finance</a>
+      <a href="#reality">Reality</a>
+      <a href="#reference">Reference</a>
+    </nav>
+    <a href="#kontakty" class="nav__cta">Domluvit schůzku →</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="uvod" class="hero" style="border:none">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <p class="hero__name">— Michaela Pekárková</p>
+        <h1 class="hero__title">vaše finance,<br><em>váš příběh</em></h1>
+        <p class="hero__lede">Financím a realitám se věnuji od roku 2012. Za tu dobu jsem zjistila, že nejde jen o produkty nebo výpočty, ale o to, jak se lidé cítí, když mají jasno, plán a někoho, komu mohou věřit.</p>
+        <a class="cta" href="#omne">Zjistit více <span class="cta__arrow">→</span></a>
+        <div class="hero__meta">
+          <div><strong>14&nbsp;let</strong>v oboru financí a realit</div>
+          <div><strong>200+</strong>spokojených klientů</div>
+          <div><strong>7</strong>profesních certifikací</div>
+        </div>
+      </div>
+      <figure class="hero__photo">
+        <figcaption class="hero__caption">Praha · 2025</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O MNĚ ===== -->
+<section id="omne">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="section__num">kapitola<strong>I.</strong></p>
+      <div>
+        <h2 class="section__title">o&nbsp;<em>mně</em></h2>
+        <p class="section__lede">Věřím, že finance nejsou jen o číslech, ale především o příbězích — o lidských osudech, které se za těmito čísly skrývají. Právě tyto příběhy mě na mé práci baví nejvíc.</p>
+      </div>
+    </div>
+    <div class="about__body">
+      <div class="about__photo" aria-hidden="true"></div>
+      <div class="about__text">
+        <p>Jmenuji se Michaela Pekárková. Do světa financí jsem vstoupila v roce 2012 jako bankovní poradce. Tato zkušenost mi poskytla pevné základy, ale brzy jsem pochopila, že nechci být jen někým, kdo „prodává produkty". Chtěla jsem být oporou, partnerem, který hledá to nejlepší řešení pro konkrétního člověka, ne pro tabulky a cíle.</p>
+        <p>Proto jsem se rozhodla pro nezávislé finanční poradenství, kde mohu tvořit řešení na míru každému klientovi a jeho životní situaci.</p>
+        <blockquote class="about__pull">„Pracuji s hlubokým respektem k vaší důvěře — finanční rozhodnutí jsou často spojena s emocemi, odpovědností a dlouhodobými dopady."</blockquote>
+        <p>Ve své práci se zaměřuji na poskytování komplexních, promyšlených a individuálně nastavených finančních řešení, která zohledňují nejen vaši aktuální situaci, ale především vaše dlouhodobé cíle, hodnoty a priority.</p>
+        <p>Mým profesním posláním je pomáhat vám budovat majetek a chránit finanční stabilitu. Ať už jde o efektivní zhodnocování úspor, plánování důchodu, koupi nemovitosti, zajištění rodiny nebo přípravu na důležité životní události — vždy hledám cesty, jak sladit výnos, bezpečí, flexibilitu a ohled na vaše plány.</p>
+        <a class="cta about__cta" href="#jakpracuji">Jak pracuji <span class="cta__arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JAK PRACUJI ===== -->
+<section id="jakpracuji">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="section__num">kapitola<strong>II.</strong></p>
+      <div>
+        <h2 class="section__title">jak <em>pracuji</em></h2>
+        <p class="section__lede">Záleží mi na loajalitě, důvěře, transparentnosti a přátelské atmosféře. Právě na těchto hodnotách stavím každou spolupráci.</p>
+      </div>
+    </div>
+
+    <p class="howq">Finanční poradenství pro mě není o rychlých řešeních, ale o budování <strong>dlouhodobého vztahu</strong>. Z několika konzultací se často stává dlouhodobý a někdy i přátelský vztah.</p>
+
+    <div class="steps">
+      <div class="step"><div class="step__num">01</div><div><h4 class="step__title">První kontakt a domluvení schůzky</h4><p class="step__desc">Setkáme se osobně v kanceláři, v kavárně nebo online. Jednoduše tam, kde se budete cítit příjemně.</p></div></div>
+      <div class="step"><div class="step__num">02</div><div><h4 class="step__title">Zjištění vaší situace a cílů</h4><p class="step__desc">Probereme vaše potřeby, přání i aktuální možnosti — bez závazku a bez tlaku.</p></div></div>
+      <div class="step"><div class="step__num">03</div><div><h4 class="step__title">Vzájemné poznání</h4><p class="step__desc">Zjistíme, zda si sedíme a zda dává spolupráce smysl oběma stranám.</p></div></div>
+      <div class="step"><div class="step__num">04</div><div><h4 class="step__title">Příprava řešení na míru</h4><p class="step__desc">Sestavím návrh finančního plánu přesně podle vaší situace a cílů.</p></div></div>
+      <div class="step"><div class="step__num">05</div><div><h4 class="step__title">Prezentace vašeho finančního plánu</h4><p class="step__desc">Představím vám návrh řešení včetně doporučených kroků a očekávaných výsledků.</p></div></div>
+      <div class="step"><div class="step__num">06</div><div><h4 class="step__title">Sjednání smluv a nastavení produktů</h4><p class="step__desc">Po schválení plánu zajistím kompletní realizaci i veškeré potřebné kroky.</p></div></div>
+      <div class="step"><div class="step__num">07</div><div><h4 class="step__title">Administrativní podpora</h4><p class="step__desc">Papírování a formality nechte na mně. Po celou dobu spolupráce vám budu k dispozici.</p></div></div>
+      <div class="step"><div class="step__num">08</div><div><h4 class="step__title">Pravidelné servisní schůzky</h4><p class="step__desc">Budeme se průběžně setkávat a upravovat plán podle vašich aktuálních potřeb.</p></div></div>
+    </div>
+
+    <div class="howcta">
+      <p>Pojďte zjistit, jak by mohla vypadat <em>naše spolupráce</em>.</p>
+      <a class="cta cta--filled" href="#kontakty">Domluvit schůzku <span class="cta__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINANCE ===== -->
+<section id="finance">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="section__num">kapitola<strong>III.</strong></p>
+      <div>
+        <h2 class="section__title"><em>finance</em></h2>
+        <p class="section__lede">Společně nastavíme řešení na míru vašim cílům — tak, aby peníze pracovaly pro vás. Jaké oblasti spolu můžeme řešit?</p>
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <p class="card__num">— 01</p>
+        <h3 class="card__title">Cesta k&nbsp;vlastnímu bydlení</h3>
+        <p class="card__desc">Od první konzultace přes výběr hypotéky až po klíče v ruce — provedu vás celým procesem srozumitelně a bez stresu.</p>
+        <span class="card__arrow">→</span>
+      </article>
+      <article class="card">
+        <p class="card__num">— 02</p>
+        <h3 class="card__title">Tvoření renty a finanční nezávislosti</h3>
+        <p class="card__desc">Peníze by neměly jen ležet, ale pracovat pro vás. Společně vytvoříme plán, který vás přiblíží k životu s větší jistotou.</p>
+        <span class="card__arrow">→</span>
+      </article>
+      <article class="card">
+        <p class="card__num">— 03</p>
+        <h3 class="card__title">Finanční rezerva pro klidnější život</h3>
+        <p class="card__desc">Nečekané situace, jako výpadek příjmu nebo neplánované výdaje, se dějí. Nastavíme rezervu, která dá klid i v náročnějších obdobích.</p>
+        <span class="card__arrow">→</span>
+      </article>
+      <article class="card">
+        <p class="card__num">— 04</p>
+        <h3 class="card__title">Zajištění pro&nbsp;případ zdravotních nesnází</h3>
+        <p class="card__desc">Nemoc nebo úraz mohou zasáhnout kdykoliv. Správně nastavené pojištění pomůže zvládnout i jejich finanční dopad.</p>
+        <span class="card__arrow">→</span>
+      </article>
+      <article class="card">
+        <p class="card__num">— 05</p>
+        <h3 class="card__title">Rychleji k&nbsp;životu bez hypotéky</h3>
+        <p class="card__desc">Splácet třicet let není nutnost. Najdu možnosti, jak hypotéku splatit rychleji a otevřít si cestu k větší finanční svobodě.</p>
+        <span class="card__arrow">→</span>
+      </article>
+      <article class="card">
+        <p class="card__num">— 06</p>
+        <h3 class="card__title">Financování s&nbsp;rozumem</h3>
+        <p class="card__desc">Ať už potřebujete peníze na rekonstrukci, auto nebo splnění jiného plánu, najdeme řešení bezpečné a smysluplné.</p>
+        <span class="card__arrow">→</span>
+      </article>
+    </div>
+
+    <div class="howcta">
+      <p>Chcete vědět, jak by mohl vypadat <em>váš finanční plán na míru?</em></p>
+      <a class="cta" href="#kontakty">Domluvit schůzku <span class="cta__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REALITY ===== -->
+<section id="reality">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="section__num">kapitola<strong>IV.</strong></p>
+      <div>
+        <h2 class="section__title"><em>reality</em></h2>
+        <p class="section__lede">Prodej nebo koupě nemovitosti je velké rozhodnutí. Pomůžu vám, aby celý proces proběhl bezpečně, hladce a bez zbytečných starostí.</p>
+      </div>
+    </div>
+
+    <div class="reality">
+      <p class="reality__lead">„Finance a reality spolu úzce souvisí — proto pod jednou střechou zajistím vše od&nbsp;hledání nemovitosti přes financování až po právní jistotu celé transakce."</p>
+      <div class="reality__list">
+        <div class="realityItem"><span class="realityItem__n">01</span><div><div class="realityItem__t">Prodej nemovitosti bez starostí</div><div class="realityItem__d">Postarám se o celý proces — od správného nastavení ceny, přes prezentaci a prohlídky až po právní servis a bezpečné předání nemovitosti.</div></div><span class="realityItem__a">→</span></div>
+        <div class="realityItem"><span class="realityItem__n">02</span><div><div class="realityItem__t">Strategie pro úspěšný prodej</div><div class="realityItem__d">Správná cenová strategie a kvalitní prezentace jsou klíčem k úspěšnému a výhodnému prodeji vaší nemovitosti.</div></div><span class="realityItem__a">→</span></div>
+        <div class="realityItem"><span class="realityItem__n">03</span><div><div class="realityItem__t">Kompletní servis pod jednou střechou</div><div class="realityItem__d">Komplexní podpora — od hledání nemovitosti přes zajištění financování až po právní jistotu celé transakce.</div></div><span class="realityItem__a">→</span></div>
+        <div class="realityItem"><span class="realityItem__n">04</span><div><div class="realityItem__t">Právní zajištění každého kroku</div><div class="realityItem__d">Ve spolupráci s ověřenými advokáty zajistím, že všechny smlouvy i právní procesy budou v naprostém pořádku.</div></div><span class="realityItem__a">→</span></div>
+        <div class="realityItem"><span class="realityItem__n">05</span><div><div class="realityItem__t">Hledání nového domova</div><div class="realityItem__d">Najít místo, kde se budete cítit opravdu doma, není jen o ceně. Pomohu vám najít nemovitost, která odpovídá vašim představám.</div></div><span class="realityItem__a">→</span></div>
+      </div>
+    </div>
+
+    <div class="howcta">
+      <p>Řešíte prodej, koupi nebo financování nemovitosti?</p>
+      <a class="cta" href="#kontakty">Nezávazná schůzka <span class="cta__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REFERENCE ===== -->
+<section id="reference">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="section__num">kapitola<strong>V.</strong></p>
+      <div>
+        <h2 class="section__title"><em>reference</em></h2>
+        <p class="section__lede">Důvěra a doporučení mých klientů jsou pro mě tou největší odměnou a potvrzením, že svou práci dělám správně.</p>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <div class="t">
+        <span class="t__mark">"</span>
+        <p class="t__body">Spolupráce s Míšou pro mě znamená kvalitní a dlouhodobá péče o moje finance. Má skvělý přehled o trhu, novinkách i dění ve financích. Na její práci si nejvíc cením trpělivosti a ochoty, které do každého kontaktu vkládá.</p>
+        <div class="t__sep"></div>
+        <div class="t__by"><div><strong>Ondřej H.</strong><span>projektový manažer</span></div><span class="t__badge">spolupráce 2018→</span></div>
+      </div>
+      <div class="t">
+        <span class="t__mark">"</span>
+        <p class="t__body">Před spoluprací s Míšou jsem v osobních financích neměl jasný systém. Společně jsme nastavili rozpočet, pravidelné spoření a první investice. Od té doby mám přehled, každý měsíc něco odkládám a peníze už neleží ladem.</p>
+        <div class="t__sep"></div>
+        <div class="t__by"><div><strong>Milan H.</strong><span>strojní technik</span></div><span class="t__badge">spolupráce 2020→</span></div>
+      </div>
+      <div class="t">
+        <span class="t__mark">"</span>
+        <p class="t__body">Michaela zanalyzovala desítky produktů, vybrala pro mě jediné skutečně optimální řešení a veškeré formality mi připravila na klíč — má role se omezila v podstatě na podpis smluv. Oceňuji rychlou a srozumitelnou komunikaci.</p>
+        <div class="t__sep"></div>
+        <div class="t__by"><div><strong>Vladimír Z.</strong><span>IT konzultant</span></div><span class="t__badge">spolupráce 2021→</span></div>
+      </div>
+      <div class="t">
+        <span class="t__mark">"</span>
+        <p class="t__body">S Míšou spolupracujeme dlouhodobě od roku 2016. Ať přijdu s čímkoli, má nápad, návrh a řešení. Nejvíc si ceníme jejího širokého portfolia — od fondů, pojištění, hypotéky až po pojištění nemovitosti nebo auta.</p>
+        <div class="t__sep"></div>
+        <div class="t__by"><div><strong>Veronika &amp; Kryštof D.</strong><span>učitelka, muzikant</span></div><span class="t__badge">spolupráce 2016→</span></div>
+      </div>
+    </div>
+
+    <p class="t-more">+ dalších <a href="#">7&nbsp;referencí</a></p>
+  </div>
+</section>
+
+<!-- ===== CERTIFIKACE ===== -->
+<section id="certifikace">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="section__num">kapitola<strong>VI.</strong></p>
+      <div>
+        <h2 class="section__title"><em>certifikace</em></h2>
+        <p class="section__lede">Veškerá oprávnění jsou řádně zaregistrována a veřejně dostupná na webu České národní banky.</p>
+      </div>
+    </div>
+
+    <div class="certs">
+      <div class="cert"><div class="cert__seal">✓</div><div><div class="cert__name">Doplňkové penzijní spoření</div><div class="cert__year">DPS · ČNB</div></div></div>
+      <div class="cert"><div class="cert__seal">✓</div><div><div class="cert__name">Investice</div><div class="cert__year">IZ · ČNB</div></div></div>
+      <div class="cert"><div class="cert__seal">✓</div><div><div class="cert__name">Úvěry</div><div class="cert__year">SUSZ · ČNB</div></div></div>
+      <div class="cert"><div class="cert__seal">✓</div><div><div class="cert__name">Životní pojištění</div><div class="cert__year">ŽP · ČNB</div></div></div>
+      <div class="cert"><div class="cert__seal">✓</div><div><div class="cert__name">Neživotní pojištění</div><div class="cert__year">NŽP · ČNB</div></div></div>
+      <div class="cert"><div class="cert__seal">★</div><div><div class="cert__name">Investiční specialista</div><div class="cert__year">advanced · 2024</div></div></div>
+      <div class="cert"><div class="cert__seal">§</div><div><div class="cert__name">PPZ registrace</div><div class="cert__year">ČNB · aktivní</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section id="kontakty" class="contact">
+  <div class="wrap">
+    <div class="contact__grid">
+      <div>
+        <h2 class="contact__title">pojďme<br>se&nbsp;<em>poznat</em>.</h2>
+        <p class="contact__sub">Ozvěte se mi telefonicky, e-mailem nebo si vyplňte krátký formulář. Ráda si na vás udělám čas.</p>
+        <div class="contact__items">
+          <a href="tel:+420606253614" class="contact__item">
+            <span class="lab">telefon</span><span class="val">+420 606 253 614</span><span class="arr">→</span>
+          </a>
+          <a href="mailto:michaela.pekarkova@vaskonzultant.cz" class="contact__item">
+            <span class="lab">e-mail</span><span class="val">michaela.pekarkova@vaskonzultant.cz</span><span class="arr">→</span>
+          </a>
+          <div class="contact__item">
+            <span class="lab">IČ</span><span class="val">04794133</span><span class="arr"></span>
+          </div>
+          <div class="contact__item">
+            <span class="lab">kancelář</span><span class="val">Praha · po dohodě</span><span class="arr"></span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="contact__card">
+        <h4>nezávazná <em>schůzka</em></h4>
+        <p>Napište mi pár vět o vaší situaci. Ozvu se vám do&nbsp;24&nbsp;hodin s návrhem termínu.</p>
+        <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Odesláno ✓'">
+          <input type="text" placeholder="Jméno a příjmení" required>
+          <input type="email" placeholder="E-mail" required>
+          <input type="tel" placeholder="Telefon">
+          <textarea placeholder="Co byste se mnou chtěli probrat?"></textarea>
+          <button type="submit">Odeslat zprávu →</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand">Pekárková<em>.</em></p>
+        <p>Nezávislé finanční poradenství<br>a&nbsp;realitní služby na&nbsp;míru.</p>
+        <p style="margin-top:14px">Jako finanční a realitní konzultant působím pod společností Váš konzultant&nbsp;s.r.o. (IČ&nbsp;06344658), ve spolupráci s Broker&nbsp;Trust,&nbsp;a.s. (IČ&nbsp;26439719).</p>
+      </div>
+      <div>
+        <h5>navigace</h5>
+        <a href="#uvod">Úvod</a>
+        <a href="#omne">O mně</a>
+        <a href="#jakpracuji">Jak pracuji</a>
+        <a href="#finance">Finance</a>
+        <a href="#reality">Reality</a>
+        <a href="#reference">Reference</a>
+      </div>
+      <div>
+        <h5>kontakt</h5>
+        <a href="tel:+420606253614">+420 606 253 614</a>
+        <a href="mailto:michaela.pekarkova@vaskonzultant.cz">michaela.pekarkova<br>@vaskonzultant.cz</a>
+        <a href="https://www.jerrs.cnb.cz">Registr ČNB →</a>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2025 michaelapekarkova.cz · Všechna práva vyhrazena</span>
+      <span>Design návrh · 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
