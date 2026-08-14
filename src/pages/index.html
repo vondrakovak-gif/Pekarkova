@@ -273,24 +273,6 @@ section+section{border-top:1px solid var(--border)}
 .footer__leg{margin-top:14px;font-size:11.5px;color:rgba(255,255,255,.3);line-height:1.7;max-width:340px}
 .footer__bot{padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.3);font-family:var(--h)}
 
-/* ===== COOKIES ===== */
-.cookie-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:1000;
-  background:var(--dark);color:rgba(255,255,255,.8);
-  padding:16px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;
-  font-size:13px;line-height:1.6;border-top:1px solid rgba(255,255,255,.1);
-}
-.cookie-bar p{max-width:700px}
-.cookie-bar a{color:rgba(255,255,255,.6);text-decoration:underline}
-.cookie-btns{display:flex;gap:10px;flex-shrink:0}
-.cookie-btn{
-  font-family:var(--h);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  padding:10px 20px;border:1px solid rgba(255,255,255,.3);cursor:pointer;
-  background:transparent;color:var(--white);transition:all .2s;
-}
-.cookie-btn--accept{background:var(--white);color:var(--dark);border-color:var(--white)}
-.cookie-btn:hover{border-color:var(--white)}
-.cookie-btn--accept:hover{opacity:.85}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1100px){
@@ -334,20 +316,10 @@ section+section{border-top:1px solid var(--border)}
   .formcard label.full{grid-column:span 1}
   .footer__top{grid-template-columns:1fr}
   .footer__bot{flex-direction:column;gap:8px}
-  .cookie-bar{flex-direction:column;padding:20px;gap:16px;align-items:flex-start}
 }
 </style>
 </head>
 <body>
-
-<!-- ===== COOKIES ===== -->
-<div class="cookie-bar" id="cookie-bar">
-  <p>Tento web používá nezbytné soubory cookie pro správné fungování. Dalšími cookies zkvalitňujeme vaši zkušenost. Více informací v <a href="#">zásadách ochrany osobních údajů</a>.</p>
-  <div class="cookie-btns">
-    <button class="cookie-btn" onclick="closeCookies()">Odmítnout</button>
-    <button class="cookie-btn cookie-btn--accept" onclick="closeCookies()">Přijmout vše</button>
-  </div>
-</div>
 
 <!-- ===== NAV ===== -->
 <header class="nav">
@@ -795,17 +767,6 @@ section+section{border-top:1px solid var(--border)}
 </footer>
 
 <script>
-// Cookie banner
-function closeCookies(){
-  localStorage.setItem('cookies_ok','1');
-  document.getElementById('cookie-bar').style.display='none';
-}
-if(!localStorage.getItem('cookies_ok')){
-  document.getElementById('cookie-bar').style.display='flex';
-} else {
-  document.getElementById('cookie-bar').style.display='none';
-}
-
 // Formspree AJAX submit
 const form = document.getElementById('contact-form');
 if(form){
