@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Zásady ochrany osobních údajů — Michaela Pekárková</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.png" type="image/png">
+<style>
+:root{--white:#ffffff;--dark:#1f242e;--gray:#666;--gray-light:#999;--bg-light:#ecefef;--border:#e2e2e2;--h:'Poppins',sans-serif;--b:'Open Sans',Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:var(--b);font-size:15px;color:var(--gray);background:var(--white);line-height:1.75}
+a{color:var(--dark);text-decoration:underline}
+a:hover{opacity:.7}
+ul{list-style:none}
+
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:var(--white);border-bottom:1px solid var(--border);
+  height:72px;display:flex;align-items:center;padding:0 56px;gap:32px;
+}
+.nav__logo img{height:58px;width:auto}
+.nav__menu{display:flex;gap:28px;margin-left:auto;list-style:none}
+.nav__menu a{font-family:var(--h);font-size:13.5px;font-weight:500;color:var(--dark);text-decoration:none;letter-spacing:.02em;transition:opacity .2s}
+.nav__menu a:hover{opacity:.6}
+.nav__cta{
+  flex-shrink:0;font-family:var(--h);font-size:12px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:11px 24px;background:var(--dark);color:var(--white);
+  border:2px solid var(--dark);transition:all .25s;white-space:nowrap;
+}
+.nav__cta:hover{background:transparent;color:var(--dark)}
+
+.page{max-width:820px;margin:0 auto;padding:140px 56px 100px}
+.page__eyebrow{font-family:var(--h);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gray-light);margin-bottom:16px}
+.page__title{font-family:var(--h);font-size:40px;font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:12px}
+.page__meta{font-size:13px;color:var(--gray-light);margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+
+.gdpr h2{font-family:var(--h);font-size:20px;font-weight:600;color:var(--dark);margin:40px 0 14px}
+.gdpr h2:first-child{margin-top:0}
+.gdpr p{margin-bottom:14px;line-height:1.85}
+.gdpr ul{margin:14px 0 14px 20px;list-style:disc}
+.gdpr ul li{margin-bottom:8px;line-height:1.75}
+.gdpr strong{color:var(--dark);font-weight:600}
+.gdpr table{width:100%;border-collapse:collapse;margin:20px 0}
+.gdpr table th{background:var(--bg-light);font-family:var(--h);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:12px 16px;text-align:left;border:1px solid var(--border);color:var(--dark)}
+.gdpr table td{padding:12px 16px;border:1px solid var(--border);font-size:14px;vertical-align:top}
+
+.footer{background:#000;padding:40px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;font-size:12px;color:rgba(255,255,255,.35);font-family:var(--h)}
+.footer a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.footer a:hover{color:rgba(255,255,255,.7)}
+
+@media(max-width:768px){
+  .nav{padding:0 20px}
+  .nav__menu{display:none}
+  .page{padding:110px 20px 72px}
+  .page__title{font-size:28px}
+  .footer{padding:32px 20px;flex-direction:column;align-items:flex-start;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="/" class="nav__logo"><img src="/logo.png" alt="Michaela Pekárková"></a>
+  <ul class="nav__menu">
+    <li><a href="/#jakpracuji">Jak pracuji</a></li>
+    <li><a href="/#omne">O mně</a></li>
+    <li><a href="/#finance">Finance</a></li>
+    <li><a href="/#reality">Reality</a></li>
+    <li><a href="/#reference">Reference</a></li>
+  </ul>
+  <a href="/#kontakty" class="nav__cta">Kontaktujte mě</a>
+</header>
+
+<main class="page">
+  <p class="page__eyebrow">právní dokument</p>
+  <h1 class="page__title">Zásady ochrany osobních údajů</h1>
+  <p class="page__meta">Platné od 1. 1. 2024 · Poslední aktualizace: srpen 2025</p>
+
+  <div class="gdpr">
+
+    <h2>1. Správce osobních údajů</h2>
+    <p>Správcem vašich osobních údajů je:</p>
+    <p>
+      <strong>Michaela Pekárková</strong><br>
+      IČ: 04794133<br>
+      Působí pod společností Váš konzultant s.r.o. (IČ: 06344658)<br>
+      ve spolupráci s Broker Trust, a.s. (IČ: 26439719)<br>
+      E-mail: <a href="mailto:michaela.pekarkova@vaskonzultant.cz">michaela.pekarkova@vaskonzultant.cz</a><br>
+      Telefon: <a href="tel:+420606253614">+420 606 253 614</a>
+    </p>
+
+    <h2>2. Jaké osobní údaje zpracováváme</h2>
+    <p>Zpracováváme pouze osobní údaje, které nám sami poskytnete prostřednictvím kontaktního formuláře nebo přímé komunikace:</p>
+    <ul>
+      <li>Jméno a příjmení</li>
+      <li>E-mailová adresa</li>
+      <li>Telefonní číslo (nepovinné)</li>
+      <li>Obsah vaší zprávy (téma konzultace, finanční situace apod.)</li>
+    </ul>
+    <p>Nezpracováváme citlivé osobní údaje ve smyslu čl. 9 GDPR bez výslovného souhlasu.</p>
+
+    <h2>3. Účel a právní základ zpracování</h2>
+    <table>
+      <tr><th>Účel</th><th>Právní základ</th><th>Doba uchování</th></tr>
+      <tr>
+        <td>Odpověď na dotaz z kontaktního formuláře, příprava a realizace finanční konzultace</td>
+        <td>Souhlas subjektu údajů (čl. 6 odst. 1 písm. a) GDPR)</td>
+        <td>Do odvolání souhlasu, nejdéle 3 roky od poslední komunikace</td>
+      </tr>
+      <tr>
+        <td>Plnění smlouvy a poskytování sjednaných finančních služeb</td>
+        <td>Plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR)</td>
+        <td>Po dobu trvání smluvního vztahu + 10 let (zákonná archivace)</td>
+      </tr>
+      <tr>
+        <td>Splnění zákonných povinností (zákon o distribuci pojištění, zákon o podnikání na kapitálovém trhu)</td>
+        <td>Splnění právní povinnosti (čl. 6 odst. 1 písm. c) GDPR)</td>
+        <td>Dle příslušného zákona, zpravidla 5–10 let</td>
+      </tr>
+    </table>
+
+    <h2>4. Příjemci osobních údajů</h2>
+    <p>Vaše osobní údaje neprodáváme ani neposkytujeme třetím stranám za účelem marketingu. Údaje mohou být sdíleny výhradně s:</p>
+    <ul>
+      <li><strong>Váš konzultant s.r.o.</strong> — jako partnerská společnost pro výkon finanční poradenské činnosti</li>
+      <li><strong>Broker Trust, a.s.</strong> — jako pojišťovací agent a obchodní zástupce pro kapitálový trh</li>
+      <li><strong>Formspree Inc.</strong> — technický zpracovatel formulářů (USA, Privacy Shield / SCC)</li>
+      <li>Pojišťovny, banky, investiční společnosti — v rozsahu nezbytném pro plnění smlouvy</li>
+      <li>Orgány státní správy — při plnění zákonných povinností</li>
+    </ul>
+
+    <h2>5. Předání údajů do třetích zemí</h2>
+    <p>Kontaktní formulář je technicky provozován společností Formspree Inc. (USA). Předání probíhá na základě standardních smluvních doložek schválených Evropskou komisí. Žádné jiné předání do třetích zemí neprobíhá.</p>
+
+    <h2>6. Vaše práva</h2>
+    <p>Jako subjekt údajů máte v souladu s GDPR právo:</p>
+    <ul>
+      <li><strong>Na přístup</strong> — získat potvrzení, zda zpracováváme vaše osobní údaje, a případně je obdržet</li>
+      <li><strong>Na opravu</strong> — požadovat opravu nepřesných nebo neúplných údajů</li>
+      <li><strong>Na výmaz</strong> — požadovat výmaz údajů (právo „být zapomenut"), pokud pominul účel zpracování</li>
+      <li><strong>Na omezení zpracování</strong> — požadovat dočasné omezení zpracování</li>
+      <li><strong>Na přenositelnost</strong> — obdržet své údaje ve strukturovaném, strojově čitelném formátu</li>
+      <li><strong>Vznést námitku</strong> — proti zpracování na základě oprávněného zájmu</li>
+      <li><strong>Odvolat souhlas</strong> — kdykoli a bez újmy odvolat souhlas se zpracováním; odvolání nemá vliv na zákonnost zpracování před odvoláním</li>
+      <li><strong>Podat stížnost</strong> — u dozorového orgánu, kterým je Úřad pro ochranu osobních údajů (ÚOOÚ), Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" target="_blank">www.uoou.cz</a></li>
+    </ul>
+    <p>Svá práva uplatňujte na e-mailu <a href="mailto:michaela.pekarkova@vaskonzultant.cz">michaela.pekarkova@vaskonzultant.cz</a>. Na vaši žádost odpovíme bez zbytečného odkladu, nejpozději do 30 dnů.</p>
+
+    <h2>7. Soubory cookie</h2>
+    <p>Tento web v současné době nepoužívá analytické ani marketingové soubory cookie. Jsou využívány výhradně technicky nezbytné cookies zajišťující základní funkci webu (session, bezpečnost formuláře). Tyto cookies nevyžadují souhlas.</p>
+
+    <h2>8. Zabezpečení</h2>
+    <p>Vaše osobní údaje jsou zpracovávány zabezpečeným způsobem. Přenos dat na webu je chráněn protokolem HTTPS. Přístup k osobním údajům je omezen na oprávněné osoby vázané mlčenlivostí.</p>
+
+    <h2>9. Změny zásad</h2>
+    <p>Tyto zásady mohou být průběžně aktualizovány. O podstatných změnách vás budeme informovat prostřednictvím e-mailu (pokud máme vaši adresu) nebo oznámením na tomto webu. Datum poslední aktualizace je uvedeno v záhlaví dokumentu.</p>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <span>© 2025 Michaela Pekárková · Všechna práva vyhrazena</span>
+  <a href="/">← Zpět na hlavní stránku</a>
+</footer>
+
+</body>
+</html>
