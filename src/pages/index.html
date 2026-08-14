@@ -101,12 +101,11 @@ section+section{border-top:1px solid var(--border)}
 
 /* ===== JAK PRACUJI ===== */
 .process__top{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start;margin-bottom:56px}
-.process__photo{width:100%;aspect-ratio:3/4;background:#c8c8c8 url('/foto-1.jpg') center/cover}
-.process__intro{
-  font-family:var(--h);font-size:18px;font-weight:400;line-height:1.75;
-  color:var(--dark);
-}
-.process__intro strong{font-weight:700}
+.process__photo{width:100%;aspect-ratio:3/4;background:#c8c8c8 url('/foto-1.jpg') top center/cover}
+.process__intro{font-size:15px;line-height:1.9;color:var(--gray)}
+.process__intro p{margin-bottom:18px}
+.process__intro p:last-child{margin-bottom:0}
+.process__intro strong{font-weight:600;color:var(--dark)}
 .timeline{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);background:var(--white)}
 .tstep{
   padding:36px 28px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);
@@ -314,7 +313,7 @@ section+section{border-top:1px solid var(--border)}
   .s-title{font-size:28px}
   .s-row{grid-template-columns:1fr;gap:20px}
   .process__top{grid-template-columns:1fr;gap:32px}
-  .process__photo{aspect-ratio:4/3}
+  .process__photo{aspect-ratio:3/4;max-height:420px}
   .about__grid{grid-template-columns:1fr;gap:36px}
   .about__photo{aspect-ratio:4/3}
   .timeline{grid-template-columns:1fr 1fr}
@@ -383,17 +382,21 @@ section+section{border-top:1px solid var(--border)}
 <!-- ===== JAK PRACUJI ===== -->
 <section id="jakpracuji" class="section--light">
   <div class="wrap">
-    <div class="s-header s-row">
-      <div>
-        <p class="s-eyebrow">01 · spolupráce</p>
-        <h2 class="s-title">Jak pracuji</h2>
-      </div>
-      <p class="s-lede">Záleží mi na loajalitě, důvěře, transparentnosti a přátelské atmosféře. Právě na těchto hodnotách stavím každou spolupráci.</p>
+    <div class="s-header">
+      <p class="s-eyebrow">01 · spolupráce</p>
+      <h2 class="s-title">Jak pracuji</h2>
     </div>
 
     <div class="process__top">
       <div class="process__photo"></div>
-      <p class="process__intro">Finanční poradenství pro mě není o&nbsp;rychlých řešeních, ale o&nbsp;budování <strong>dlouhodobého vztahu</strong>. Často se tak z&nbsp;několika konzultací stává dlouhodobý a&nbsp;někdy i&nbsp;přátelský vztah.</p>
+      <div class="process__intro">
+        <p>Záleží mi na loajalitě, důvěře, transparentnosti a přátelské atmosféře. Právě na těchto hodnotách stavím každou spolupráci.</p>
+        <p>Finanční poradenství pro mě není o rychlých řešeních, ale o budování <strong>dlouhodobého vztahu</strong>. Chci a dbám na to, aby se na mě moji klienti mohli obracet nejen při sjednání smluv, ale i v průběhu let, kdy se jejich životní situace mění. Často se tak z několika konzultací stává dlouhodobý a někdy i přátelský vztah.</p>
+        <p>Mým cílem je pro Vás být spolehlivým parťákem, který Vás bude provázet různými etapami života, ať už jde o první hypotéku, plánování investic, ochranu majetku nebo zásadní rozhodnutí, která přináší samotný život.</p>
+        <p>Důvěra a doporučení mých klientů jsou pro mě tou největší odměnou a potvrzením, že svou práci dělám správně.</p>
+        <p>Očekávejte ode mě maximální loajalitu, smysl pro detail a vstřícné jednání.</p>
+        <p>Podobné nastavení očekávám i já od Vás. Vzájemná důvěra, respekt a otevřenost jsou pro mě základem dobré spolupráce.</p>
+      </div>
     </div>
 
     <div class="timeline">
