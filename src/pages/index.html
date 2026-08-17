@@ -225,7 +225,7 @@ section+section{border-top:1px solid var(--border)}
 .ci__icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center}
 .ci__icon svg{width:18px;height:18px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .ci__lab{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;margin-bottom:2px;font-family:var(--h);font-weight:600}
-.ci__val{font-family:var(--h);font-size:15px;color:var(--white);display:block;font-weight:500}
+.ci__val{font-family:var(--h);font-size:15px;color:var(--white);display:block;font-weight:500;word-break:break-word;overflow-wrap:break-word}
 
 /* FORMCARD */
 .formcard{background:var(--white);padding:48px 44px}
@@ -275,9 +275,12 @@ section+section{border-top:1px solid var(--border)}
   .footer__top{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media(max-width:768px){
-  .nav{padding:0 20px}
+  .nav{padding:0 16px;height:72px}
+  .nav__logo img{height:58px}
   .nav__menu{display:none}
+  .nav__cta{font-size:10px;padding:9px 14px;letter-spacing:.06em}
   .wrap{padding:0 20px}
+  .hero{padding-top:72px}
   .hero__title{font-size:38px}
   .hero__eyebrow{font-size:10px}
   .hero__lede{font-size:14px}
@@ -301,6 +304,9 @@ section+section{border-top:1px solid var(--border)}
   .cert__previews{grid-template-columns:repeat(2,1fr)}
   .contact__grid{grid-template-columns:1fr;gap:48px}
   .contact__title{font-size:28px}
+  .ci{padding:14px 16px}
+  .ci__val{font-size:12px}
+  .cert__note{flex-direction:column;align-items:flex-start;gap:12px}
   .formcard{padding:32px 24px}
   .f-grid{grid-template-columns:1fr}
   .formcard label.full{grid-column:span 1}
